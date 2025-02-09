@@ -6,9 +6,6 @@ navigation_potential
 .. image:: https://img.shields.io/pypi/v/navigation_potential.svg
         :target: https://pypi.python.org/pypi/navigation_potential
 
-.. image:: https://img.shields.io/travis/rcremese/navigation_potential.svg
-        :target: https://travis-ci.com/rcremese/navigation_potential
-
 .. image:: https://readthedocs.org/projects/navigation-potential/badge/?version=latest
         :target: https://navigation-potential.readthedocs.io/en/latest/?version=latest
         :alt: Documentation Status
