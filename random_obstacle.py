@@ -4,8 +4,8 @@ import numpy as np
 
 class RandomObstacle2D(Grid2D):
     def __init__(self, grid_size: int, obstacle_density: float, seed=None):
-        if obstacle_density < 0 or obstacle_density >= 1:
-            raise ValueError("Obstacle density must be between 0 and 1")
+        if obstacle_density < 0 or obstacle_density >= 0.9:
+            raise ValueError("Obstacle density must be between 0 and 0.9")
         self.obstacle_density = obstacle_density
         super().__init__(grid_size, seed)
 
@@ -22,8 +22,8 @@ class RandomObstacle2D(Grid2D):
 
 class RandomObstacle3D(Grid3D):
     def __init__(self, grid_size: int, obstacle_density: float, seed=None):
-        if obstacle_density < 0 or obstacle_density >= 1:
-            raise ValueError("Obstacle density must be between 0 and 1")
+        if obstacle_density < 0 or obstacle_density >= 0.9:
+            raise ValueError("Obstacle density must be between 0 and 0.9")
         self.obstacle_density = obstacle_density
         super().__init__(grid_size, seed)
 

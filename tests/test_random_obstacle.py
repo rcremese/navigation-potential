@@ -5,12 +5,12 @@ from random_obstacle import RandomObstacle2D, RandomObstacle3D
 
 @pytest.fixture
 def random_obstacle_2d():
-    return RandomObstacle2D(grid_size=5, obstacle_density=0.5)
+    return RandomObstacle2D(grid_size=5, obstacle_density=0.5, seed=0)
 
 
 @pytest.fixture
 def random_obstacle_3d():
-    return RandomObstacle3D(grid_size=5, obstacle_density=0.5)
+    return RandomObstacle3D(grid_size=5, obstacle_density=0.5, seed=0)
 
 
 def test_init(
@@ -43,20 +43,20 @@ def test_obstacle_density(
 
 
 def test_obstacle_density_edge_cases():
-    grid = RandomObstacle2D(grid_size=5, obstacle_density=0.0)
+    grid = RandomObstacle2D(grid_size=5, obstacle_density=0.0, seed=0)
     grid_2d = grid.generate_grid()
     assert np.count_nonzero(grid_2d == 1) == 0
-    grid = RandomObstacle2D(grid_size=5, obstacle_density=0.9)
+    grid = RandomObstacle2D(grid_size=5, obstacle_density=0.8, seed=0)
     grid_2d = grid.generate_grid()
     obstacle_count = np.count_nonzero(grid_2d == 1)
-    assert np.isclose(obstacle_count / (5**2), 0.9, atol=0.5)
-    grid = RandomObstacle3D(grid_size=5, obstacle_density=0.0)
+    assert np.isclose(obstacle_count / (5**2), 0.8, atol=0.1)
+    grid = RandomObstacle3D(grid_size=5, obstacle_density=0.0, seed=0)
     grid_3d = grid.generate_grid()
     assert np.count_nonzero(grid_3d == 1) == 0
-    grid = RandomObstacle3D(grid_size=5, obstacle_density=0.9)
+    grid = RandomObstacle3D(grid_size=5, obstacle_density=0.8, seed=0)
     grid_3d = grid.generate_grid()
     obstacle_count = np.count_nonzero(grid_3d == 1)
-    assert np.isclose(obstacle_count / (5**3), 0.9, atol=0.5)
+    assert np.isclose(obstacle_count / (5**3), 0.8, atol=0.1)
 
 
 def test_obstacle_density_out_of_range():
