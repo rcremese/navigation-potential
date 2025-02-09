@@ -5,9 +5,6 @@
 import pytest
 
 
-from navigation_potential import navigation_potential
-
-
 @pytest.fixture
 def response():
     """Sample pytest fixture.
