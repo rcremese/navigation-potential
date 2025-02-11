@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-from random_obstacle import RandomObstacle2D, RandomObstacle3D
+from navigation_potential.environments.random_obstacle import RandomObstacle2D, RandomObstacle3D
 
 
 @pytest.fixture
