@@ -1,19 +1,19 @@
 import pytest
-from navigation_potential.environments.grid_world import GridWorld
+from navigation_potential.environments import GridWorld
 import numpy as np
 
 
 @pytest.fixture
 def grid_2d():
-    return GridWorld(grid_size=(5,10), seed=42)
+    return GridWorld(grid_size=(5, 10), seed=42)
 
 
 @pytest.fixture
 def grid_3d():
-    return GridWorld(grid_size=(5,10,15), seed=42)
+    return GridWorld(grid_size=(5, 10, 15), seed=42)
 
 
-def test_initialization(grid_2d : GridWorld, grid_3d : GridWorld):
+def test_initialization(grid_2d: GridWorld, grid_3d: GridWorld):
     assert grid_2d.grid_size == (5, 10)
     assert grid_3d.grid_size == (5, 10, 15)
     assert grid_2d.dim == 2
@@ -56,11 +56,11 @@ def test_free_positions(grid_2d: GridWorld, grid_3d: GridWorld):
 def test_edge_cases():
     # Test with a grid size of 1.
     with pytest.raises(ValueError):
-        grid_2d = GridWorld(grid_size=(0,1), seed=42)
-        grid_3d = GridWorld(grid_size=(5,0,10), seed=42)
+        grid_2d = GridWorld(grid_size=(0, 1), seed=42)
+        grid_3d = GridWorld(grid_size=(5, 0, 10), seed=42)
 
     # Test setting an obstacle at a position that is out of bounds.
-    grid_2d = GridWorld(grid_size=(5,5), seed=42)
+    grid_2d = GridWorld(grid_size=(5, 5), seed=42)
     with pytest.raises(IndexError):
         grid_2d.set_obstacle((5, 5))
 

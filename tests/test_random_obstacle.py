@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-from navigation_potential.environments.grid_world import RandomObstacleGrid
+from navigation_potential.environments import RandomObstacleGrid
 
 
 @pytest.fixture
