@@ -10,6 +10,7 @@ readme = "README.rst"
 authors = [
   {name = "Robin CREMESE", email = "robin.cremese@gmail.com"}
 ]
+requires-python = ">=3.10"
 maintainers = [
   {name = "Robin CREMESE", email = "robin.cremese@gmail.com"}
 ]
