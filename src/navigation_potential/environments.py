@@ -84,6 +84,10 @@ class GridWorld:
     def free_positions(self) -> np.ndarray:
         return np.argwhere(1 - self.grid)
 
+    @property
+    def obstacle_positions(self) -> np.ndarray:
+        return np.argwhere(self.grid)
+    
     def __repr__(self):
         return f"{self.__class__.__name__}(grid_size={self.grid_size}, spacing={self.spacing},seed={self.seed})"
 
