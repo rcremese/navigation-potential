@@ -9,6 +9,7 @@ twine>=5.0.0
 ruff>=0.3.5
 
 warp-lang>=1.5.0
+scikit-fmm>=2025.1.29
 numpy>=2.0
 matplotlib>=3.0
 
